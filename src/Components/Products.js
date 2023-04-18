@@ -4,13 +4,12 @@ import "../index.css";
 const ProductsForm = ({ categories, setProducts }) => {
 	const [productsFormData, setProductsFormData] = useState({
 		title: "",
-		quantity: 0,
+		quantity: 1,
 		categoryId: "",
 	});
 	const changeHandler = e => {
 		const { name, value } = e.target;
 		setProductsFormData({ ...productsFormData, [name]: value });
-
 	};
 
 	const addNewProductHandler = e => {
@@ -20,9 +19,13 @@ const ProductsForm = ({ categories, setProducts }) => {
 			createdAt: new Date().toLocaleString(),
 			id: new Date().getTime(),
 		};
-		setProducts(prevState => [...prevState, newProduct]);
-		setProductsFormData({ title: "", quantity: 0, categoryId: "" });
+		if (productsFormData.categoryId) {
+			setProducts(prevState => [...prevState, newProduct]);
+		}
+
+		setProductsFormData({ title: "", quantity: 1, categoryId: "" });
 	};
+
 	return (
 		<div className="mb-6">
 			<h2 className="text-xl text-slate-300 font-bold mb-2">Add New Product</h2>

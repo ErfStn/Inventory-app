@@ -1,6 +1,5 @@
 import CategoryForm from "./Category";
 
-
 const Filter = ({
 	searchValue,
 	searchHandler,
@@ -12,7 +11,7 @@ const Filter = ({
 }) => {
 	return (
 		<div>
-			<h2 className="text-slate-500 font-bold mb-5 border-b-slate-500 border-b">
+			<h2 className="text-slate-300 font-bold mb-4 border-b-slate-500 border-b">
 				Filter
 			</h2>
 
@@ -62,11 +61,8 @@ const Filter = ({
 					{/* <option className="bg-slate-500 text-slate-300" value="">
 						select filter
 					</option> */}{" "}
-					<option
-						className="bg-slate-500 text-slate-300"
-						value=""
-					>
-All
+					<option className="bg-slate-500 text-slate-300" value="">
+						All
 					</option>
 					{categories.map(category => {
 						return (

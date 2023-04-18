@@ -1,6 +1,7 @@
 import { useState } from "react";
 const CategoryForm = ({ setCategories }) => {
 	const [isShow, setIsShow] = useState(false);
+
 	const [categoryFormData, setCategoryFormData] = useState({
 		title: "",
 		description: "",
@@ -35,10 +36,7 @@ const CategoryForm = ({ setCategories }) => {
 				</h2>
 				<form className="bg-slate-700 p-4 rounded-xl flex flex-col gap-y-4">
 					<div>
-						<label
-							htmlFor="title"
-							className="block mb-1 text-slate-400"
-						>
+						<label htmlFor="title" className="block mb-1 text-slate-400">
 							title
 						</label>
 						<input
@@ -51,10 +49,7 @@ const CategoryForm = ({ setCategories }) => {
 						/>
 					</div>
 					<div>
-						<label
-							htmlFor="description"
-							className="block mb-1 text-slate-400"
-						>
+						<label htmlFor="description" className="block mb-1 text-slate-400">
 							description
 						</label>
 						<textarea
@@ -83,7 +78,7 @@ const CategoryForm = ({ setCategories }) => {
 				</form>
 			</div>
 			<button
-				className={`text-slate-600 text-lg mb-4 ${!isShow ? "" : "hidden"}`}
+				className={`text-slate-300 text-lg mb-4 ${!isShow ? "" : "hidden"}`}
 				onClick={() => setIsShow(prevState => !prevState)}
 			>
 				add new category?

@@ -81,8 +81,8 @@ function App() {
 	//!
 	return (
 		<div>
-			<div className="bg-slate-800 min-h-screen">
-				<Navbar />
+			<div className="bg-slate-800 min-h-screen pb-8">
+				<Navbar products={filteredProducts} />
 				<div className="container mx-auto p-4 md:flex-row flex-col flex md:justify-between lg:max-w-screen-xl md:gap-x-12">
 					<section className="w-full">
 						<CategoryForm setCategories={setCategories} />
